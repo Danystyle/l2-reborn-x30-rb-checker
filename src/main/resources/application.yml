@@ -3,11 +3,6 @@ logging:
     blog: WARN
     org: WARN
     org.hibernate.SQL: DEBUG
-mvc:
-  hiddenmethod:
-    filter:
-      enabled: true
-
 
 spring:
   datasource:
@@ -21,6 +16,5 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
 server:
   port : ${PORT:8080}
