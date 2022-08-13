@@ -1,21 +1,21 @@
 package com.example.l2rebornx30rbchecker.init;
 
-import com.example.l2rebornx30rbchecker.service.AudioServiceImpl;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AppInit implements CommandLineRunner {
-    private final AudioServiceImpl audioService;
+//    private final AudioServiceImpl audioService;
 
 
-    public AppInit(AudioServiceImpl audioService) {
+    public AppInit() {
 
-        this.audioService = audioService;
+
     }
 
     @Override
     public void run(String... args) throws Exception {
-        audioService.openSound();
+//        audioService.openSound();
     }
 }

@@ -116,9 +116,9 @@ public class RaidBossServiceImpl implements RaidBossService {
                     raidBossRepository.save(rbEntity);
             }
         }
-        if (alive) {
-            audioService.playSound();
-        }
+//        if (alive) {
+//            audioService.playSound();
+//        }
     }
 
     @Override
