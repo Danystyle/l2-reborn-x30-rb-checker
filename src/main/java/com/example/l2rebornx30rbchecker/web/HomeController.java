@@ -23,7 +23,7 @@ public class HomeController {
 
     @GetMapping
     public String index(Model model) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        AppInit.update();
+        raidBossService.updateInfo();
         LocalDateTime now = LocalDateTime.now();
         model.addAttribute("allBosses", raidBossService.getAllRaidBosses());
         model.addAttribute("now", now);
