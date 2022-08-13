@@ -15,7 +15,7 @@ public class AppBeanConfiguration {
 
     @Bean
     public WebDriver driver() {
-        System.setProperty("webdriver.gecko.driver", "src/main/resources/static/drivers/geckodriver.exe");
+//        System.setProperty("webdriver.gecko.driver", "src/main/resources/static/drivers/geckodriver.exe");
         FirefoxBinary firefoxBinary = new FirefoxBinary();
         FirefoxOptions options = new FirefoxOptions();
         options.setBinary(firefoxBinary);
