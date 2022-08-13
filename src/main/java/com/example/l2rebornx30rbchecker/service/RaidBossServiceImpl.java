@@ -9,9 +9,6 @@ import org.modelmapper.ModelMapper;
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -25,14 +22,13 @@ public class RaidBossServiceImpl implements RaidBossService {
     private final RaidBossRepository raidBossRepository;
     private final DriverServiceImpl driverService;
     private final ModelMapper modelMapper;
-    private final AudioServiceImpl audioService;
+//    private final AudioServiceImpl audioService;
     private final WebDriver driver;
 
-    public RaidBossServiceImpl(RaidBossRepository raidBossRepository, DriverServiceImpl driverService, ModelMapper modelMapper, AudioServiceImpl audioService, WebDriver driver) {
+    public RaidBossServiceImpl(RaidBossRepository raidBossRepository, DriverServiceImpl driverService, ModelMapper modelMapper, WebDriver driver) {
         this.raidBossRepository = raidBossRepository;
         this.driverService = driverService;
         this.modelMapper = modelMapper;
-        this.audioService = audioService;
         this.driver = driver;
     }
 
@@ -93,7 +89,6 @@ public class RaidBossServiceImpl implements RaidBossService {
                         .setTimeOfDeath(null)
                         .setAlive(true);
                 raidBossRepository.save(rbEntity);
-                audioService.playSound();
                 continue;
             }
 
