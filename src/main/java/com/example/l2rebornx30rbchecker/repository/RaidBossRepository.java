@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface RaidBossRepository extends JpaRepository<RaidBoss, Long> {
-    List<RaidBoss> findAllByOrderByAliveRespawnEnd();
+    List<RaidBoss> findAllByOrderByAliveDescRespawnEndAsc();
 }
