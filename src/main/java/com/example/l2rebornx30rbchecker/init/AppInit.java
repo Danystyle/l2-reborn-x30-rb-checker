@@ -1,21 +1,22 @@
 package com.example.l2rebornx30rbchecker.init;
 
 
+import com.example.l2rebornx30rbchecker.service.RaidBossService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AppInit implements CommandLineRunner {
-//    private final AudioServiceImpl audioService;
+    private final RaidBossService raidBossService;
 
 
-    public AppInit() {
-
-
+    public AppInit(RaidBossService raidBossService) {
+        this.raidBossService = raidBossService;
     }
 
     @Override
     public void run(String... args) throws Exception {
-//        audioService.openSound();
+//        raidBossService.exportRaidBosses();
+        raidBossService.initialSeedRaidBosses();
     }
 }
