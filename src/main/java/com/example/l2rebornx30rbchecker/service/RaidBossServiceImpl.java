@@ -43,7 +43,7 @@ public class RaidBossServiceImpl implements RaidBossService {
     @Override
     public List<RaidBossViewModel> getAllRaidBosses() {
         return raidBossRepository
-                .findAllByOrderByRespawnEnd()
+                .findAllByOrderByAliveRespawnEnd()
                 .stream()
                 .map(entity -> modelMapper.map(entity, RaidBossViewModel.class)
                         .setRespawnStart(entity.getRespawnStart() == null ? "" : getTimeFrom(entity.getRespawnStart()))
