@@ -1,5 +1,6 @@
 package com.example.l2rebornx30rbchecker.service;
 
+import com.example.l2rebornx30rbchecker.constants.GlobalConstants;
 import com.example.l2rebornx30rbchecker.model.dto.RaidBossExportDto;
 import com.example.l2rebornx30rbchecker.model.dto.RaidBossUpdateDto;
 import com.example.l2rebornx30rbchecker.model.entity.RaidBoss;
@@ -123,6 +124,9 @@ public class RaidBossServiceImpl implements RaidBossService {
                     .filter(sm -> sm.getRebornID().equals(rb.getRebornID()))
                     .findAny()
                     .orElseThrow();
+            if (rb.getName().equals(BARAKIEL)) {
+                serviceModel.setRespawnEnd(serviceModel.getRespawnStart().plusMinutes(30));
+            }
 
 
             if (!rb.isAlive() && serviceModel.isAlive()) {
